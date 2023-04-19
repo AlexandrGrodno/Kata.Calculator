@@ -16,7 +16,7 @@ public class Main {
         StringBuilder result = new StringBuilder();
         Scanner string = new Scanner(System.in);
         String line = string.nextLine();
-        String[] lines = line.split(" "); // Определение элементов строки сторки
+        String[] lines = line.split(" "); // /Определение элементов строки сторки.
           // определение римских чисел
         for (var i = 0; i < romNumber.length; i++) {
             if (romNumber[i].equals(lines[0])) {
