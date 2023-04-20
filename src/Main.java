@@ -6,7 +6,7 @@ public class Main {
         Scanner string = new Scanner(System.in);
         System.out.println("Ответ: " +calc(string.nextLine()));
     }
-    public static String calc(String line) throws Exception {
+    public static String calc(String input) throws Exception {
         String[] romNumber = new String[]{"I", "II", "III", "IV", "V", "VI", "VII", "VIII", "IX", "X"};
 
         String[] keyRomNamber = new String[]{"C", "XC", "L", "XL", "X", "IX", "V", "IV", "I"};
@@ -19,9 +19,9 @@ public class Main {
         boolean secondRomeNumberFlag = false;
         boolean signFlag = false;
         StringBuilder result = new StringBuilder();
-            String[] lines = line.split(" "); // /Определение элементов строки .
+            String[] lines = input.split(" "); // /Определение элементов строки .
             if (lines.length > 3) {
-                throw new Exception("вы ввели боьшее количество значений");
+                throw new Exception("Вы ввели большее количество значений!");
             }
             // определение римских чисел
             for (var i = 0; i < romNumber.length; i++) {
@@ -70,11 +70,11 @@ public class Main {
                 }
             }
             if (!signFlag) {
-                throw new Exception(" неверный знак ");
+                throw new Exception(" Неверный знак! ");
             }
             if (firstRomeNumberFlag && secondRomeNumberFlag) {
                 if (arithmeticResult < 1) {
-                    throw new Exception("Результат вычисления римских чисел меньше единицы");
+                    throw new Exception("Результат вычисления римских чисел меньше единицы!");
                 }
                 // Вычисление римских чисел
                 while (ind < keyRomNamber.length) {
